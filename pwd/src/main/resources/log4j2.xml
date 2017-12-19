@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--monitorInterval：30秒自动刷新配置,strict：使用xml文件 ban json-->
+<Configuration monitorInterval="30" strict="true" schema="Log4J-V2.2.xsd">
+
+    <properties>
+        <property name="LOG_HOME">D:/logs</property>
+        <property name="FILE_NAME">InventoryTool</property>
+    </properties>
+    <Appenders>
+
+        <!--<File name="inventory-error"-->
+              <!--fileName="${LOG_HOME}/error.log"-->
+        <!--&gt;-->
+            <!--<PatternLayout>-->
+                <!--<Pattern>-->
+                    <!--%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread][%file:%line] - %msg%n-->
+                <!--</Pattern>-->
+            <!--</PatternLayout>-->
+        <!--</File>-->
+
+        <RollingFile name="fantastic-info"
+              fileName="${LOG_HOME}/fantastic-info.log" filePattern="${LOG_HOME}/%d{yyyy-MM-dd}-fantastic-info.log"
+        >
+            <PatternLayout>
+                <Pattern>
+                    %date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread][%file:%line] - %msg%n
+                </Pattern>
+            </PatternLayout>
+
+            <Policies>
+                <TimeBasedTriggeringPolicy />
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+
+        </RollingFile>
+
+        <!--<File name="inventory-warn"-->
+              <!--fileName="${LOG_HOME}/warn.log"-->
+        <!--&gt;-->
+            <!--<PatternLayout>-->
+                <!--<Pattern>-->
+                    <!--%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread][%file:%line] - %msg%n-->
+                <!--</Pattern>-->
+            <!--</PatternLayout>-->
+        <!--</File>-->
+
+
+        <!--<File name="inventory-debug"-->
+              <!--fileName="${LOG_HOME}/debug.log"-->
+        <!--&gt;-->
+            <!--<PatternLayout>-->
+                <!--<Pattern>-->
+                    <!--%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread][%file:%line] - %msg%n-->
+                <!--</Pattern>-->
+            <!--</PatternLayout>-->
+        <!--</File>-->
+
+        <Async name="Async-info">
+            <AppenderRef ref="fantastic-info"/>
+        </Async>
+
+        <!--<Async name="Async-debug">-->
+            <!--<AppenderRef ref="inventory-debug"/>-->
+        <!--</Async>-->
+
+        <!--<Async name="Async-warn">-->
+            <!--<AppenderRef ref="inventory-warn"/>-->
+        <!--</Async>-->
+
+        <!--<Async name="Async-error">-->
+            <!--<AppenderRef ref="inventory-error"/>-->
+        <!--</Async>-->
+    </Appenders>
+
+    <Loggers>
+
+        <!--开启异步日志-->
+        <Root level="debug">
+            <!--<AppenderRef ref="Async-error" level="ERROR"/>-->
+            <AppenderRef ref="Async-info" />
+            <!--<AppenderRef ref="Async-debug" level="DEBUG"/>-->
+            <!--<AppenderRef ref="Async-warn" level="WARN"/>-->
+        </Root>
+    </Loggers>
+
+</Configuration>
