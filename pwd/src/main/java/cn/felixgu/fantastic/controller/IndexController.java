@@ -21,7 +21,7 @@ public class IndexController {
     @RequestMapping(value = "/test", produces = "application/json")
     public Object test(){
         Map<String, String> map = new LinkedHashMap<String, String>();
-        map.put("a","a");
+        map.put("a","alocal");
         return map;
     }
 }
