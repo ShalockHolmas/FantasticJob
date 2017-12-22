@@ -5,12 +5,12 @@
          version="3.1">
     
     <servlet>
-        <servlet-name>fantastic</servlet-name>
+        <servlet-name>fantastic-customer</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>fantastic</servlet-name>
+        <servlet-name>fantastic-customer</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
@@ -18,8 +18,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            /WEB-INF/fantastic-servlet.xml;
-            classpath:dubbo-provider.xml
+            /WEB-INF/fantastic-customer-servlet.xml
         </param-value>
     </context-param>
 

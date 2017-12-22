@@ -17,9 +17,10 @@
        ">
 
     <import resource="classpath:database.xml"/>
+    <import resource="classpath:dubbo-customer.xml"/>
 
     <context:annotation-config/>
-    <context:component-scan base-package="cn.felixgu.fantastic"/>
+    <context:component-scan base-package="cn.felixgu"/>
 
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 
@@ -34,7 +35,7 @@
         <property name="namingStrategy">
             <bean class="org.hibernate.cfg.ImprovedNamingStrategy"/>
         </property>
-        <property name="packagesToScan" value="cn.felixgu.fantastic.entity"/>
+        <property name="packagesToScan" value="cn.felixgu.fantasticcustomer.entity"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>

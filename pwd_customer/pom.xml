@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.felixgu</groupId>
-    <artifactId>fantastic</artifactId>
+    <artifactId>fantastic-customer</artifactId>
     <version>1.0-master</version>
     <!--<build>-->
         <!--<plugins>-->
@@ -38,6 +38,11 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>cn.felixgu</groupId>
+            <artifactId>fantastic-jar</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>com.101tec</groupId>
             <artifactId>zkclient</artifactId>
@@ -271,8 +276,8 @@
 
 
     </dependencies>
-    <!--<build>-->
-        <!--<finalName>ebs</finalName>-->
+    <build>
+        <finalName>fantastic</finalName>
 
         <!--<plugins>-->
 
@@ -288,5 +293,5 @@
             <!--</plugin>-->
 
         <!--</plugins>-->
-    <!--</build>-->
+    </build>
 </project>
