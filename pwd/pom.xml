@@ -271,8 +271,8 @@
 
 
     </dependencies>
-    <!--<build>-->
-        <!--<finalName>ebs</finalName>-->
+    <build>
+        <finalName>fantastic</finalName>
 
         <!--<plugins>-->
 
@@ -288,5 +288,5 @@
             <!--</plugin>-->
 
         <!--</plugins>-->
-    <!--</build>-->
+    </build>
 </project>

@@ -40,7 +40,7 @@
 
         <dependency>
             <groupId>cn.felixgu</groupId>
-            <artifactId>fantastic-jar</artifactId>
+            <artifactId>fantastic-api</artifactId>
             <version>1.0</version>
         </dependency>
         <dependency>
@@ -277,7 +277,7 @@
 
     </dependencies>
     <build>
-        <finalName>fantastic</finalName>
+        <finalName>customer</finalName>
 
         <!--<plugins>-->
 

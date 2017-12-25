@@ -5,7 +5,7 @@
 
     <dubbo:application name="fantastic-customer-test"/>
     <!--<dubbo:registry address="zookeeper://38.141.47.200:2181"/>-->
-    <!--<dubbo:registry address="zookeeper://127.0.0.1:2181"/>-->
-    <dubbo:registry address="zookeeper://10.66.3.37:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <!--<dubbo:registry address="zookeeper://10.66.3.37:2181"/>-->
     <dubbo:reference id="userService" interface="cn.felixgu.fantastic.service.UserService"/>
 </beans>
