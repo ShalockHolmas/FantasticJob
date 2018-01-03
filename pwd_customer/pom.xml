@@ -21,7 +21,7 @@
     <!--</build>-->
     <packaging>war</packaging>
 
-    <name>fantastic</name>
+    <name>fantastic-crawl</name>
 
     <!--定义包版本号-->
     <properties>
@@ -101,6 +101,11 @@
             <version>${poi.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.3</version>
+        </dependency>
 
         <!-- Spring framework start-->
         <!--<dependency>-->
@@ -288,6 +293,16 @@
                 </configuration>
             </plugin>
         </plugins>
+        <!--<plugins>-->
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-compiler-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--<source>1.8</source>-->
+                    <!--<target>1.8</target>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
 
         <!--<plugins>-->
 
