@@ -21,7 +21,7 @@ public class CrawSinaCosplay extends BaseCrawl implements CrawlService {
         getHttpClient().execute(getHttpGet());
         String html = getString();
         Document document = Jsoup.parse(html);
-        Elements elements = document.getElementsByClass("picBox");
+        Elements elements = document.getElementsByClass("picBox > h2");
 
         List<URI> uriList = new ArrayList<>();
         for (Element e :
@@ -41,7 +41,6 @@ public class CrawSinaCosplay extends BaseCrawl implements CrawlService {
             getHttpGet().setURI(detailUri);
             setCharset(Charset.forName("gb2312"));
 
-            getHttpClient().execute(getHttpGet());
             String detailHtml = getString();
             Document detailDocument = Jsoup.parse(detailHtml);
             Elements nodeEle = detailDocument.select("div#eData > dl");

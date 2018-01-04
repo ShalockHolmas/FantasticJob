@@ -11,6 +11,7 @@ import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.HttpClientBuilder;
 
 import java.io.*;
+import java.net.URI;
 import java.nio.charset.Charset;
 import java.util.List;
 import java.util.UUID;
@@ -127,5 +128,31 @@ public class BaseCrawl {
         httpPost = null;
         httpClient = null;
         response = null;
+    }
+
+
+    public void saveFile(URI uri) throws IOException {
+        String path = uri.getRawPath();
+        String type = (path.split("/")[path.split("/").length - 1]).split("\\.")[((path.split("/")[path.split("/").length - 1]).split("\\.").length) - 1];
+        getHttpGet().setURI(uri);
+
+
+        response = getHttpClient().execute(httpGet,getHttpClientContext());
+
+        httpEntity = response.getEntity();
+
+        InputStream in = httpEntity.getContent();
+        OutputStream out = new FileOutputStream(new File(UUID.randomUUID().toString() + "." + type));
+
+        int n = 0;
+        byte[] context = new byte[1024];
+        while ((n = in.read(context)) != -1) {
+            out.write(context, 0 ,n);
+        }
+        out.flush();
+
+        in.close();
+        out.close();
+        destory();
     }
 }
